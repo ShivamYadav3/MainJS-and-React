@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   const promise = new Promise((res, rej) => {
+  //     res("resolved");
+  //     // rej("rejected");
+  //   });
+  //   promise
+  //     .then((data) => {
+  //       console.log(data);
+  //     })
+  //     .catch((data) => {
+  //       console.log(data);
+  //     });
+
+  //   const promise =()=>{
+  //       return new Promise((res,rej)=>{
+  //           res("resolved");
+  //     //    rej("rejected");
+  //       })
+  //   }
+  //       const okk=async()=>{
+  //          try{
+  //           const ok=await promise();
+  //           console.log(ok)
+  //          }
+  //          catch{
+  //           console.log("rejected")
+  //          }
+  //       }
+  //     okk()
+  // fetch("https://fakestoreapi.com/products")
+  // .then((response)=>{
+  //    return response.json()
+  // }).then((data)=>{
+  //     console.log(data)
+  // })
+
+    const promise = (num) => {
+      return new Promise((res, rej) => {
+        res(num);
+      });
+    };
+    promise(5)
+      .then((data) => {
+        console.log("data 1", data); // 5
+        return data + 10;
+      })
+      .then((data) => {
+        console.log("data 2", data); // 15
+        return data + 10;
+      })
+      .then((data) => {
+        console.log("data 3", data); // 25
+        return data + 10;
+      })
+      .then((data) => {
+        console.log("data 4", data); // 35
+        return data + 10;
+      })
+      .then((data) => {
+        console.log("data 5", data); // 45
+        return data + 10;
+      })
+      .then((data) => {
+        console.log("data 6", data); // 55
+        return data + 10;
+      })
+      .then((data) => {
+        console.log("data 7", data); // 65
+      });
+
+//   const enterAtm = () => {
+//     return new Promise((res, rej) => {
+//       res("enter in atm");
+//     });
+//   };
+//   const enterPin = () => {
+//     return new Promise((res, rej) => {
+//         res("enter pin");
+//     });
+//   };
+//   const withdarl = () => {
+//     return new Promise((res, rej) => {
+//         res("paisa hi paisa");
+//     });
+//   };
+//   const baharAao = () => {
+//     return new Promise((res, rej) => {
+//         res("ghar jao");
+//     });
+//   };
+//     enterAtm()
+//       .then((data) => {
+//         enterPin()
+//           .then((data) => {
+//             withdarl()
+//               .then((data) => {
+//                 baharAao()
+//                   .then((data) => {
+//                     console.log("sab kuch resolve")
+//                   })
+//                   .catch((err) => {});
+//               })
+//               .catch((err) => {});
+//           })
+//           .catch((err) => {});
+//       })
+//       .catch((err) => {});
+
+//   const okk = async () => {
+//     try {
+//       const enterAtmResolve = await enterAtm();
+//       const enterPinResolve = await enterPin();
+//       const withdarlResolve = await withdarl();
+//       const baharAaoResolve = await baharAao();
+//     } catch {
+//       console.log("you are failed");
+//     }
+//   };
+//   okk();
+
+// Promise.all([enterAtm(),enterPin(),baharAao()])
+// .then((data)=>{
+//     console.log("you all are resolve")
+// }).catch((err)=>{
+//     console.log("rejected")
+// })
+
+// Promise.any([enterAtm(),enterPin(),baharAao()])
+// .then((data)=>{
+//     console.log("you all are resolve")
+// }).catch((err)=>{
+//     console.log("rejected")
+// })
+
+// Promise.race([enterAtm(),enterPin(),baharAao()])
+// .then((data)=>{
+//     console.log("you all are resolve")
+// }).catch((err)=>{
+//     console.log("rejected")
+// })
+
+// Promise.allSettled([enterAtm(),enterPin(),baharAao()])
+// .then((data)=>{
+//     console.log("you all are resolve")
+// }).catch((err)=>{
+//     console.log("rejected")
+// })
+</script>

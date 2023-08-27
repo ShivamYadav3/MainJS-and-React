@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let arr = ["okk", 5, true, null, 5, { name: "shivam" }];
+  arr.push(56, "fs");
+
+  console.log("ln 17",arr);
+  // // arr.pop();
+  // // console.log("ln 19",arr);
+  // arr.pop(null,5)
+  // console.log("ln 21",arr);
+  // let a =arr.length;
+  // console.log("ln 23",a);
+
+  // let arr2 =["ehf",5,88,46,47,85,48]
+  // console.log("ln 26",arr2)
+  // // arr2.length=0;
+  // console.log("ln 28",arr2);
+  let x = arr[4];
+  console.log("ln 30", x);
+  console.log("ln 31", arr);
+  console.log("ln 32", arr[50]);
+
+  let len = arr.length;
+  for (let i = 0; i < len; i++) {
+    arr.pop();
+  }
+  console.log("ln 38", arr);
+
+  let arr3 = ["sg", 5, 5];
+  console.log("ln 41", arr3);
+  arr3[8] = "okk";
+  console.log("ln 43", arr3);
+  for (i = 0; i < arr3.length; i++) {
+    console.log("ln 45", arr3[i]);
+  }
+  console.log(Array.isArray(arr3));
+</script>

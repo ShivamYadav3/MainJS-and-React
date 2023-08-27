@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // 1 create an array
+
+  let arr = [];
+  arr[0] = "shivam";
+  arr[1] = "yadav";
+  arr[2] = "jabalpur";
+  arr[3] = "mp";
+  arr[4] = 5;
+  arr[5] = 9;
+  arr[6] = 65;
+  arr[7] = { name: "shivam" };
+  arr[8] = 0;
+  arr[9] = "okk";
+  console.log("ln 23", arr);
+
+  // 2 we can add multipal data
+
+  // arr.push("new", 45,89);
+  // console.log("ln 28", arr);
+
+  // 3 remove
+
+  // arr.pop();
+  // console.log("ln 33", arr);
+
+  // // 4  remove through loop
+
+  // // let len = arr.length;
+
+  // // for(let i=0; i<len; i++)(
+  // //     arr.pop()
+  // // )
+  // // console.log("ln 40", arr)
+
+  // // 5 length property
+
+  // console.log("ln 47 : length =", arr.length)
+
+  // // 6 how to empty an array
+
+  // // arr.length = 0;
+  // // console.log("ln 52", arr)
+
+  // // 7 print the value of array
+
+  // for(let i =0; i<arr.length; i++){
+  //     console.log("ln 59: value = ", arr[i])
+  // }
+
+  // // 8 remove element from 0th index
+
+  // arr.shift();
+  // console.log("ln 65", arr);
+
+  // // 9 add element in 0th index
+
+  // arr.unshift("shivam", 58, {ehf:"dbfef"})
+  // console.log("ln 70", arr)
+
+  // 10 splice method it modifies the same array
+
+  // const no = arr.splice(8);
+  // console.log("ln 75", arr, no);
+
+  // const noo =arr.splice(8, 1);
+  // console.log("ln 78", arr, noo);
+
+  arr.splice(8, 0, "nam", 58);
+  console.log("ln 81", arr);
+
+  // 11 change the message
+
+  // let mess ="my name is yadav ji and this is the new word";
+  // let arr1= mess.split(" ")
+  // // console.log(arr1)
+
+  // let word=arr1.indexOf("word");
+  // // console.log(word)
+
+  // if(word !== -1){
+  //     arr1[word]="newWordd"
+  // }
+
+  // // console.log(arr1);
+  // let final =arr1.join(" ")
+  // console.log("ln 96", final);
+
+  //  12 remove only
+
+  let mess = "my name is yadav ji and this is the new word";
+  let arr1 = mess.split(" ");
+
+  let word = arr1.indexOf("yadav");
+  if (word !== -1) {
+    arr1.splice(word, 2);
+  }
+
+  // console.log(arr1);
+  let final = arr1.join(" ");
+  console.log("ln 112", final);
+
+  // 13 slice method new array
+
+  console.log("ln 116", arr);
+
+  let arr2 = arr.slice(3, 9);
+  console.log("ln 119", arr2);
+
+  let arr3 = arr.slice(2);
+  console.log("ln 122", arr3);
+
+  // 14 typeof array is object
+
+  console.log("ln 126", typeof arr3);
+
+  // 15   1st method how to check this is array or not
+
+  console.log("ln 130", Array.isArray(arr3));
+
+  // 16      2nd method
+
+  console.log("ln 134", arr3 instanceof Array);
+
+  // 17 convert array in to string
+
+  // 1 st method to string()
+
+  let str = arr3.toString();
+  console.log("ln 141", str);
+
+  //18   2nd method join method
+
+  let str2 = arr3.join(" + ");
+  console.log("ln 146", typeof str2);
+
+  // 19 remove element thhrough delete method
+
+  delete arr3[5];
+  console.log("ln 151", arr3);
+
+  // 20 merging array through concat method
+
+  let arr5 = arr3.concat(arr2);
+  console.log("ln 156", arr5);
+
+  // we can pass value as well
+
+  let arr6 = arr5.concat("oooo", 5555);
+  console.log("ln 160", arr6);
+
+  // we can pass multipal array
+
+  let arr7 = arr3.concat(arr2, arr3, arr);
+  console.log("ln 166", arr7);
+
+  // 21 set the array alphabetically by sort() method
+
+  let arr8 = ["banana", "apple", "oppel", "c", "hd", "fhkeh"];
+  arr8.sort();
+  console.log("ln 172", arr8);
+
+  // 22 reverse the array
+
+  arr8.reverse();
+  console.log("ln 177", arr8); // in this we sorted the array in reverse order
+
+  // 23 sort the number
+
+  let arr9 = [45, 8, 754, 8, 18, 4, 1, 5, 974, 111];
+  arr9.sort();
+  console.log("ln 183", arr9); // this is not showing the right output
+
+  // 24 word and number
+
+  let arr10 = ["aaaa", "adhwd", "fbweb", 55, 87, 14, 4449, "fe", "efb", "adw"];
+  arr10.sort();
+  console.log("ln 189", arr10); // numbet then charecter
+
+  // 25 method to sort the array in wich value is number
+
+  arr9.sort(function (a, b) {
+    return a - b;
+  });
+  console.log("ln 194", arr9);
+  // with the help of this we can find the lowest nad highest value in arrays
+  // in this index[0] have lowest value and index[arr9.length-1] have highest value
+
+  // 26 in descending order
+
+  arr9.sort(function (a, b) {
+    return b - a;
+  });
+  console.log("ln 201", arr9);
+
+  // 27 sort by Math.random()
+
+  arr9.sort(function () {
+    return 0.5 - Math.random();
+  });
+  console.log("ln 206", arr9);
+
+  // 28 fisher yet method for sorting randomly
+
+  for (let i = arr9.length - 1; i > 0; i--) {
+    // upar se gaya
+  }
+
+  // 29 for finding highest value
+
+  let arr11 = [45, 75, 4, 444, 74, 6, 46, 646, 46, 64647, 54];
+  function findmax(arrr) {
+    return Math.max.apply(null, arrr);
+  }
+  console.log("ln 220", findmax(arr11));
+
+  // 30 for finding lowest value
+
+  function findmin(arrr) {
+    return Math.min.apply(null, arrr);
+  }
+  console.log("ln 227", findmin(arr11));
+
+  // finding highest with my max and my min through while loop
+
+  // 31 compairing json
+
+  const person = [
+    { name: "shivam", age: 35 },
+    { name: "mayank", age: 26 },
+    { name: "child", age: 18 },
+  ];
+
+  person.sort(function (a, b) {
+    return a.age - b.age;
+  });
+  console.log("ln 240", person);
+
+  // Don't understand what is happening here
+
+  const cars = [
+    { type: "Volvo", year: 2016 },
+    { type: "Saab", year: 2001 },
+    { type: "BMW", year: 2010 },
+  ];
+
+  // displayCars();
+
+  function myFunction() {
+    cars.sort(function (a, b) {
+      let x = a.type.toLowerCase();
+      let y = b.type.toLowerCase();
+      if (x < y) {
+        return -1;
+      }
+      if (x > y) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+  //   displayCars();
+</script>

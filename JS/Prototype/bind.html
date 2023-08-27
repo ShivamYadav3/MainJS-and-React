@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      style="
+        width: 0px;
+        height: 0px;
+        border-left: 25px solid blue;
+        border-bottom: 50px solid black;
+        border-right: 25px solid burlywood;
+      "
+    ></div>
+  </body>
+</html>
+<script>
+  Function.prototype.myBind = function (...args) {
+    param = args.slice(1);
+    let obj = this;
+    return function (...args2) {
+      return obj.apply(args[0], [...param, ...args2]);
+    };
+  };
+ 
+  Function.prototype.myCall = function (obj, ...args) {
+    let sym = Symbol();
+    obj[sym] = this;
+    let result = obj[sym](...args);
+    delete obj[sym];
+    return result;
+  };
+
+  Function.prototype.myApply = function (obj, ...args) {
+    let sym = Symbol();
+    obj[sym] = this;
+    let result = obj[sym](...args[0]);
+    delete obj[sym];
+    return result;
+  };
+
+
+  const profile = {
+    uName: "shivam",
+    city: "j",
+    getName: function () {
+      return this.uName, this.city;
+    },
+  };
+
+  const profile2 = {
+    uName: "Satyam",
+  };
+</script>

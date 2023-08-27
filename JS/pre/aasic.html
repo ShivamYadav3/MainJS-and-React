@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undo Redo Example</title>
+</head>
+<style></style>
+<body>
+  <input type="text" onkeyup="okk(event)" id="target" />
+  <button onclick="undo()">undo</button>
+  <button onclick="redo()">redo</button>
+</body>
+</html>
+<script>
+let history = [];
+let currentIndex = -1;
+
+function okk(e) {
+  let target = document.getElementById("target");
+  if (e.target.value.length === 0) return;
+  
+  // Remove entries ahead in history when new input is made
+  history.push(target.value);
+  currentIndex = history.length - 1;
+}
+
+const undo = () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    document.getElementById("target").value = history[currentIndex];
+  }
+};
+
+const redo = () => {
+  if (currentIndex < history.length - 1) {
+    currentIndex++;
+    document.getElementById("target").value = history[currentIndex];
+  }
+};
+</script>

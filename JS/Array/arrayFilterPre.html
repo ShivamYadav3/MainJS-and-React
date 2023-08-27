@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //     // final way
+  //     let arr = [4,85,6,1,444,45,74,87,47,547,4,7,447,487,16,8,8,698];
+  //     let resultV1 =arr.filter((shivam)=> shivam%2===0);
+  //     console.log("@SY - ", resultV1);
+
+  //     // 2nd way
+  //     let resultsV2 =arr.filter((data)=>{
+  //         if(data>300 && data%2===0){
+  //             return data;
+  //         }
+  //     })
+  //     console.log("@SY - ",resultsV2);
+
+  //     let resultsV3 =arr.filter((data)=>data>300 && data%2===0);
+  //     console.log(resultsV3);
+
+  //     const profiles = [
+  //     {
+  //       name: "ankit",
+  //       active: true,
+  //     },
+  //     {
+  //       name: "ankit",
+  //       active: true,
+  //     },
+  //     {
+  //       name: "rahul",
+  //       active: false,
+  //     },
+  //     {
+  //       name: "shivam",
+  //       active: true,
+  //     },
+  //     {
+  //       name: "mitesh",
+  //       active: false,
+  //     },
+  //   ];
+
+  //   let resultsV4=profiles.filter((data)=>{
+  //     if(data.active===true){
+  //         return data;
+  //     }
+
+  //   });
+  //   console.log(resultsV4)
+
+  //   let resultsV5=profiles.filter((data)=>data.active);
+  //   console.log("@SY - ", resultsV5);
+
+  // prectice
+
+  // 1 st
+
+  function fiveAndGreaterOnly(arr) {
+    return arr.filter((data) => data > 5);
+  }
+  console.log("Prob - 1 ", fiveAndGreaterOnly([3, 6, 8, 2]));
+
+  // 2 nd
+
+  function evensOnly(arr) {
+    return arr.filter((data) => data % 2 == 0);
+  }
+  console.log("Prob - 2 ", evensOnly([3, 6, 8, 2]));
+
+  // 3 rd
+
+  function fiveCharactersOrFewerOnly(arr) {
+    return arr.filter((data) => data.length <= 5);
+  }
+  console.log(
+    "Prob - 3 ",
+    fiveCharactersOrFewerOnly([
+      "dog",
+      "wolf",
+      "by",
+      "family",
+      "eaten",
+      "camping",
+    ])
+  );
+
+  // 4th
+
+  function peopleWhoBelongToTheIlluminati(arr) {
+    return arr.filter((data) => data.member);
+  }
+  console.log(
+    "Prob - 4 ",
+    peopleWhoBelongToTheIlluminati([
+      { name: "Angelina Jolie", member: true },
+      { name: "Eric Jones", member: false },
+      { name: "Paris Hilton", member: true },
+      { name: "Kayne West", member: false },
+      { name: "Bob Ziroll", member: true },
+    ])
+  );
+
+  // 5 th
+
+  function ofAge(arr) {
+    return arr.filter((data) => data.age > 18);
+  }
+  console.log(
+    "Prob - 5 ",
+    ofAge([
+      { name: "Angelina Jolie", age: 80 },
+      { name: "Eric Jones", age: 2 },
+      { name: "Paris Hilton", age: 5 },
+      { name: "Kayne West", age: 16 },
+      { name: "Bob Ziroll", age: 100 },
+    ])
+  );
+</script>

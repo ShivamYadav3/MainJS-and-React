@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    if (!document.getElementById) {
+  document.getElementById = function (id) {
+    const elements = document.getElementsByTagName('*');
+
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+
+      if (element.id === id) {
+        return element;
+      }
+    }
+
+    return null; // Return null if no matching element is found
+  };
+}
+
+
+if (!document.getElementsByClassName) {
+  document.getElementsByClassName = function (className) {
+    const elements = document.getElementsByTagName('*');
+    const matchedElements = [];
+
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+
+      if (element.classList.contains(className)) {
+        matchedElements.push(element);
+      }
+    }
+
+    return matchedElements;
+  };
+}
+
+</script>

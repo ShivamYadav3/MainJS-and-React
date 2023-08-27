@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const enteringInsideRestro = () => {
+    return new Promise((reply, reject) => {
+      reply(true);
+    });
+  };
+
+  const callWaiterToTakeAnOrder = (order) => {
+    return new Promise((reply, reject) => {
+      reply({ product: order });
+    });
+  };
+
+  const orderGoingToKitchen = (order) => {
+    return new Promise((reply, reject) => {
+      reply({ product: ["pavbhaji", "chote bhature"], prepared: true });
+    });
+  };
+
+  const servingToTheCustomer = () => {
+    return new Promise((reply, reject) => {
+      reply(true);
+    });
+  };
+
+  const customerEatingTheFood = () => {
+    return new Promise((reply, reject) => {
+      reply(true);
+    });
+  };
+
+  const customerGivingThePayment = () => {
+    return new Promise((reply, reject) => {
+      reply(true);
+    });
+  };
+  const customerIsLeaving = () => {
+    return new Promise((reply, reject) => {
+      reply(true);
+    });
+  };
+  const orderDetails = {
+    order: ["pavbhaji", "chote bhature"],
+  };
+
+  enteringInsideRestro().then((data) => {
+    console.log("Using Then", data);
+  });
+
+  async function visitRestro() {
+    const enteringInRestroResponse = await enteringInsideRestro();
+    const placingOfOrderResponse = await callWaiterToTakeAnOrder(orderDetails);
+    const orderResponse = await orderGoingToKitchen(orderDetails);
+    const servingFoodToCustomerResponse = await servingToTheCustomer();
+    const customerFoodResponse = await customerEatingTheFood();
+    const paymentResponse = await customerGivingThePayment();
+    const finalResponse = await customerIsLeaving();
+  }
+
+  visitRestro();
+</script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  //   const p = () => {
+  //     return new Promise((reply, reject) => {
+  //       reply(1);
+  //     });
+  //   };
+
+  //   p()
+  //     .then((data) => {
+  //       console.log("LN21: ", data);
+  //       return data1 + 1;
+  //     })
+  //     .catch((err) => {
+  //       console.log("LN25: ", err);
+  //       return 0
+  //     })
+  //     .then((data) => {
+  //       console.log("LN28: ", data);
+  //       return data + 10;
+  //     })
+  //     .then((data) => {
+  //       console.log("LN32: ", data); //2
+  //     })
+  //     .catch((err) => {
+  //       console.log("LN35: ", err);
+  //     });
+
+  const p = () => {
+    return new Promise((reply, reject) => {
+      reply(0);
+    });
+  };
+
+  p()
+    .then((data) => {
+      console.log("LN21: ", data);//0
+      return data1 + 10;
+    })
+    .catch((err) => {
+      console.log("LN25: ", err);//err
+      return 0;
+    })
+    .then((data) => {
+      console.log("LN25: ", data);//0
+      return data + 11;
+    })
+    .catch((err) => {
+      console.log("LN25: ", err);
+      return 0;
+    })
+    .then((data) => {
+      console.log("LN29: ", data); //11
+      return data + 100;
+    })
+    .then((data) => {
+      console.log("LN36: ", data); //111
+    })
+    .catch((err) => {
+      console.log("LN31: ", err);
+    });
+</script>
+<!-- new Promise(function(resolve, reject) {
+
+    setTimeout(() => resolve(1), 1000);
+  
+  }).then(function(result) {
+  
+    alert(result); // 1
+  
+    return new Promise((resolve, reject) => { // (*)
+      setTimeout(() => resolve(result * 2), 1000);
+    });
+  
+  }).then(function(result) { // (**)
+  
+    alert(result); // 2
+  
+    return new Promise((resolve, reject) => {
+      setTimeout(() => resolve(result * 2), 1000);
+    });
+  
+  }).then(function(result) {
+  
+    alert(result); // 4
+  
+  ;}); -->

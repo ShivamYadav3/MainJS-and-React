@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const callAPI = (url) => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("Done");
+      }, 3000);
+    });
+  };
+
+  const callAPIV2 = (url) => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reject("Done");
+      }, 3000);
+    });
+  };
+
+  // Case 1 - Calling using Async await with no error handling
+    const useAPI = async () => {
+      //const result = await callAPI();
+      const result = await callAPIV2();
+      console.log("LN23: ", result);
+    };
+
+    // useAPI();
+
+  // Case 2 - handle common errors
+  const useAPIV2 = async () => {
+    try {
+      const result = await callAPIV2();
+      console.log("LN32: ", result);
+    } catch (err) {
+      console.log("SY : Err: ", err);
+    }
+  };
+
+  useAPIV2();
+</script>

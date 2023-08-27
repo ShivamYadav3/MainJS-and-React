@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style></style>
+  <body>
+    <input type="text" onkeyup="okk(event)" id="target" />
+    <button onclick="undo()">undo</button>
+    <button onclick="redo()">redo</button>
+  </body>
+</html>
+<script>
+  // var f = 8;
+  // //   const arr = [50, 78, 45, 25, 25, 45, 64, 24, 11];
+  // //   const arr2 = arr.filter((data) => data <= 25).reduce((data,acc)=>data+acc,0)
+  // //   console.log(arr2);
+  // //   let a=5 //#5551
+  // //   let b=a//#5418
+  // let a = 5;
+  // const b = 52;
+  // // function shiv(){
+  // //     console.log(this)
+  // // }
+  // // shiv()
+  // // const  shiv=async()=>{
+  // // return new Promise((resolve, reject)=>{
+  // // return (()=>
+  // // setTimeout( async()=>{
+  // //     await resolve("you are resolved")
+  // // },3000)
+  // // )
+  // // })
+  // // }
+  // // shiv().then((data)=>console.log(data))
+
+  // const promise = () => {
+  //   return new Promise((res, rej) => {
+  //     rej("you are resolve");
+  //   });
+  // };
+  // promise()
+  //   .then((data) => {
+  //     console.log("using then ", data);
+  //   })
+  //   .catch((data) => {
+  //     console.log("using then ", "you are reject");
+  //   });
+
+  // async function shiv() {
+  //   try {
+  //     const okk = await promise();
+  //     console.log("using async ",okk);
+  //   } catch {
+  //     console.log("using async ","there is an error");
+  //   }
+  // }
+  // shiv();
+
+  let blank = [""];
+  let blank1 = [""];
+  function okk(e) {
+    if (e.target.value.length == 0) return;
+    blank.push(e.target.value);
+    blank1.push(e.target.value);
+  }
+
+  const undo = () => {
+    let value = document.getElementById("target").value;
+    console.log([blank1])
+    for (let i = blank1.length - 1; i > 0; i--) {
+     
+      if (blank[i] === value) {
+        document.getElementById("target").value = blank1[i - 1];
+        blank1.pop();
+        return;
+      }
+    }
+  };
+  const redo = () => {
+    let value = document.getElementById("target").value;
+    console.log(blank);
+    for (let i = blank.length - 1; i >= 0; i--) {
+      if (blank[i] === value && i !== blank.length - 1) {
+        document.getElementById("target").value = blank[i + 1];
+        blank1=blank.slice(0,i+1)
+        return;
+      }
+    }
+  };
+</script>

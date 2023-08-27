@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const inputThree = [
+    {
+      username: "john",
+      team: "red",
+      score: 5,
+      items: ["ball", "book", "pen"],
+    },
+    {
+      username: "becky",
+      team: "blue",
+      score: 10,
+      items: ["tape", "backpack", "pen"],
+    },
+    {
+      username: "susy",
+      team: "red",
+      score: 55,
+      items: ["ball", "eraser", "pen"],
+    },
+    {
+      username: "tyson",
+      team: "green",
+      score: 1,
+      items: ["book", "pen"],
+    },
+  ];
+
+  const scoreSum = inputThree.reduce((acc, curr) => {
+    // console.log({ acc, curr });
+    const result = acc + curr.score;
+    return result;
+  }, 0);
+  console.log(`twet`, scoreSum);
+
+  const scoreSumV2 = inputThree.reduce(
+    (acc, curr) => {
+      //   console.log({ acc, curr });
+      //const result = acc[0] + curr.score;
+
+      acc[0] += curr.score;
+      //console.log(result, acc);
+
+      return acc;
+    },
+    [0]
+  );
+  console.log(`gg`, scoreSumV2);
+
+  const sumScoreArr = inputThree.reduce((acc, curr) => {
+    const elem = {
+      score: curr.score,
+    };
+    acc.push(elem);
+
+    return acc;
+  }, []);
+
+  console.log(`ghfh`, sumScoreArr);
+
+  const sumAverage = inputThree.reduce(
+    (acc, curr, index) => {
+      const sum = acc.totalScore + curr.score;
+      const avg = sum / (index + 1);
+
+      acc.totalScore = sum;
+      acc.avgScore = avg;
+
+      return acc;
+    },
+    { totalScore: 0, avgScore: 0 }
+  );
+
+  console.log({ sumAverage });
+</script>

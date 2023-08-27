@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  String.prototype.myLowerCase = function () {
+    // console.log("Inside myUpperCase", this); 
+    function myWay(word) {
+      return String.fromCharCode(word.charCodeAt(0) + 32);
+    }
+
+    let result = "";
+    for (let i = 0; i < this.length; i++) {
+      let code = this[i].charCodeAt(0)
+      if (code > 64 && code < 91) {
+          result += myWay(this[i]);
+      } else {
+        result += this[i];
+      }
+    }
+    return result;
+  };
+  const str = "SHivam";
+  const str2 = "SHivam is FROM jabALpur  26";
+  console.log(str.myLowerCase(), str2.myLowerCase());
+</script>

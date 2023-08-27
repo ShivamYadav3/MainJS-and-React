@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div id="parent"> -->
+    <div
+      style="height: 150px; border: 1px solid black; margin: 25px"
+      onclick="shivam3()"
+    >
+      grend parent
+      <div
+        style="height: 100px; border: 1px solid black; margin: 25px"
+        onclick="shivam2()"
+      >
+        parent
+        <div
+          style="height: 50px; border: 1px solid black; margin: 25px"
+          onclick="shivam1()"
+        >
+          child
+        </div>
+      </div>
+    </div>
+    <button onclick="okk()">click</button>
+    <!-- </div> -->
+  </body>
+</html>
+<script>
+  function shivam1() {
+    console.log("child");
+  }
+  function shivam2() {
+    console.log("parent");
+  }
+  function shivam3() {
+    console.log("grend parent");
+  }
+  // let parent=document.getElementById("parent")
+  // parent.addEventListener("click", (event)=>{
+  //   console.log(event.target.innerText)
+  // })
+
+  const debounce = (func, delay) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => func(...args), delay);
+    };
+  };
+  const okk = debounce(() => console.log("debounce"), 300);
+  window.addEventListener("scroll", okk);
+  window.addEventListener("scroll", () => console.log("not"));
+
+  const throttle = function (cb, delay) {
+    let wait = false;
+    return function () {
+      if (!wait) {
+        cb();
+        wait = true;
+        setTimeout(() => (wait = false), delay);
+      }
+    };
+  };
+  const okk1 = throttle(() => console.log("throttle"), 300);
+  window.addEventListener("scroll", okk1);
+</script>

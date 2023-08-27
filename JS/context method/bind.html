@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // uName = "Amit";
+  const profile = {
+    uName: "Tanuj",
+    getName: function () {
+      console.log("@This: ", this);
+      return this.uName;
+    },
+  };
+
+  const profile2 = {
+    uName: "Satyam",
+  };
+
+  const getUserName = profile.getName.bind(profile2);
+
+  console.log("@AJ 1: ", profile.getName());
+  console.log("@AJ 2: ", getUserName());
+  console.log("@sy 2: ", profile.getName.bind(profile2));
+</script>

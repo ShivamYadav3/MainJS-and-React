@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // const enterInsideAtm = () => {
+  //   return new Promise((resolve, reject) => {
+  //     resolve(console.log("entary"));
+  //   });
+  // };
+
+  // const enterCardInMachine = () => {
+  //   return new Promise((resolve, reject) => {
+  //     resolve(console.log("enter card"));
+  //   });
+  // };
+
+  // const enterPin = () => {
+  //   return new Promise((resolve, reject) => {
+  //     resolve(console.log("password"));
+  //   });
+  // };
+
+  // const withdrawalMoney = () => {
+  //   return new Promise((resolve, reject) => {
+  //     resolve(console.log("paisa hi paisa"));
+  //   });
+  // };
+
+  // const comeOutside = () => {
+  //   return new Promise((resolve, reject) => {
+  //     resolve(console.log("work done"));
+  //   });
+  // };
+  // enterInsideAtm()
+  //   .then((data) => {
+  //     enterCardInMachine()
+  //       .then((data) => {
+  //         enterPin()
+  //           .then((data) => {
+  //             withdrawalMoney()
+  //               .then((data) => {
+  //                 comeOutside()
+  //                   .then((data) => {})
+  //                   .catch((error) => {});
+  //               })
+  //               .catch((error) => {});
+  //           })
+  //           .catch((error) => {});
+  //       })
+  //       .catch((error) => {});
+  //   })
+  //   .catch((error) => {});
+
+  // using of async & await
+
+  // async function visitAtm() {
+  //   const enterInsideAtmResponse = await enterInsideAtm();
+  //   const enterCardInMachineResponse = await enterCardInMachine();
+  //   const enterPinResponse = await enterPin();
+  //   const withdrawalMoneyResponse = await withdrawalMoney();
+  //   const comeOutsideResponse = await comeOutside();
+  // }
+  // visitAtm();
+
+  const enterAtm = () => {
+    return new Promise((resolve, reject) => {
+      resolve(console.log("entar in atm"));
+    });
+  };
+  const useCard = () => {
+    return new Promise((reply, reject) => {
+      reply(console.log("card in machine"));
+    });
+  };
+  const enterPin = () => {
+    return new Promise((reply, reject) => {
+      reply(console.log("enter yor pin"));
+    });
+  };
+  const withdrawlMoney = () => {
+    return new Promise((reply, reject) => {
+      reply(console.log("paisa hi paisa"));
+    });
+  };
+  const removeCard = () => {
+    return new Promise((reply, reject) => {
+      reply(console.log("take your card back"));
+    });
+  };
+  const workDone = () => {
+    return new Promise((resolve, reject) => {
+      resolve(console.log("work is done"));
+    });
+  };
+
+  enterAtm()
+    .then((data) => {
+      useCard()
+        .then((data) => {
+          enterPin()
+            .then((data) => {
+              withdrawlMoney()
+                .then((data) => {
+                  removeCard()
+                    .then((data) => {
+                      workDone()
+                        .then((data) => {})
+                        .catch((error) => {});
+                    })
+                    .catch((error) => {});
+                })
+                .catch((error) => {});
+            })
+            .catch((error) => {});
+        })
+        .catch((error) => {});
+    })
+    .catch((error) => {});
+
+  const visitATM = async () => {
+    const enterAtmVar = await enterAtm();
+    const useCardVar = await useCard();
+    const enterPinVar = await enterPin();
+    const withdrawlMoneyVar = await withdrawlMoney();
+    const removeCardVar = await removeCard();
+    const workDoneVar = await workDone();
+  };
+  visitATM();
+</script>

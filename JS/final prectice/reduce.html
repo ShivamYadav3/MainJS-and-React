@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const user = [
+    { fname: "shivam", lname: "yadav", age: 25 },
+    { fname: "shubham", lname: "dube", age: 25 },
+    { fname: "akash", lname: "kushwaha", age: 25 },
+    { fname: "shanky", lname: "sahu", age: 27 },
+    { fname: "sat", lname: "patel", age: 24 },
+    { fname: "kush", lname: "thakur", age: 26 },
+    { fname: "amit", lname: "gupta", age: 28 },
+    { fname: "gourv", lname: "thakur", age: 22 },
+  ];
+  const out =user.reduce((acc,data)=>{
+    if(data.age>24){
+        acc.push(data.fname)
+    }
+    return acc
+  },[])
+  console.log(out)
+</script>

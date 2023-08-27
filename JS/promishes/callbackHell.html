@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  // const enteringInsideRestro = () => {
+  //   return new Promise((reply, reject) => {
+  //     reply(true);
+  //   });
+  // };
+
+  // const callWaiterToTakeAnOrder = (order) => {
+  //   return new Promise((reply, reject) => {
+  //     reply({ product: order });
+  //   });
+  // };
+
+  // const orderGoingToKitchen = (order) => {
+  //   return new Promise((reply, reject) => {
+  //     reply({ product: ["pavbhaji", "chole bhature"], prepared: true });
+  //   });
+  // };
+
+  // const servingToTheCustomer = () => {
+  //   return new Promise((reply, reject) => {
+  //     reply(true);
+  //   });
+  // };
+
+  // const customerEatingTheFood = () => {
+  //   return new Promise((reply, reject) => {
+  //     reply(true);
+  //   });
+  // };
+
+  // const customerGivingThePayment = () => {
+  //   return new Promise((reply, reject) => {
+  //     reply(true);
+  //   });
+  // };
+  // const customerIsLeaving = () => {
+  //   return new Promise((reply, reject) => {
+  //     reply(true);
+  //   });
+  // };
+  // const orderDetails = {
+  //   order: ["pavbhaji", "chote bhature"],
+  // };
+
+  // enteringInsideRestro()
+  //   .then((data) => {
+  //     callWaiterToTakeAnOrder(orderDetails)
+  //       .then((data) => {
+  //         orderGoingToKitchen(orderDetails)
+  //           .then((data) => {
+  //             servingToTheCustomer()
+  //               .then((data) => {
+  //                 customerEatingTheFood()
+  //                   .then((data) => {
+  //                     customerGivingThePayment()
+  //                       .then((data) => {
+  //                         customerIsLeaving()
+  //                           .then((data) => {})
+  //                           .catch((err) => {});
+  //                       })
+  //                       .catch((err) => {});
+  //                   })
+  //                   .catch((err) => {});
+  //               })
+  //               .catch((err) => {});
+  //           })
+  //           .catch((err) => {});
+  //       })
+  //       .catch((err) => {});
+  //   })
+  //   .catch((err) => {});
+
+  // const goingOut = () => {
+  //   return new Promise((res, rej) => {
+  //     res(console.log("chalo ghumne"));
+  //   });
+  // };
+
+  // const whereToGo = () => {
+  //   return new Promise((res, rej) => {
+  //     res(console.log("chalo Kahi bhi ek kaam karte hai bhedaghat chalte hai"));
+  //   });
+  // };
+
+  // const Bike = () => {
+  //   return new Promise((res, rej) => {
+  //     res(console.log("2 gadi 6 ladke"));
+  //   });
+  // };
+  // const teaBreak = () => {
+  //   return new Promise((res, rej) => {
+  //     res(console.log("Jaldi chalo time ho raha hai fir ghr bhi jana hai"));
+  //   });
+  // };
+  // const inBhedaGhat = () => {
+  //   return new Promise((res, rej) => {
+  //     res(console.log("pahuch gaye ghumo"));
+  //   });
+  // };
+
+  // const Enjoyed = () => {
+  //   return new Promise((res, rej) => {
+  //     res(console.log("enjoy ho gaya"));
+  //   });
+  // };
+
+  // const returnToHome = () => {
+  //   return new Promise((res, rej) => {
+  //     res(console.log("chalo ghar"));
+  //   });
+  // };
+
+  // const inHome = () => {
+  //   return new Promise((res, rej) => {
+  //     res(console.log("pahuch gae ghr"));
+  //   });
+  // };
+
+  // goingOut()
+  //   .then((data) => {
+  //     whereToGo()
+  //       .then((data) => {
+  //         Bike()
+  //           .then((data) => {
+  //             teaBreak()
+  //               .then((data) => {
+  //                 inBhedaGhat()
+  //                   .then((data) => {
+  //                     Enjoyed()
+  //                       .then((data) => {
+  //                         returnToHome()
+  //                           .then((data) => {
+  //                             inHome()
+  //                               .then((data) => {
+  //                                 console.log("finally");
+  //                               })
+  //                               .catch((err) => {});
+  //                           })
+  //                           .catch((err) => {});
+  //                       })
+  //                       .catch((err) => {});
+  //                   })
+  //                   .catch((err) => {});
+  //               })
+  //               .catch((err) => {});
+  //           })
+  //           .catch((err) => {});
+  //       })
+  //       .catch((err) => {});
+  //   })
+  //   .catch((err) => {});
+
+  // const withoutCB = async () => {
+  //   console.log("with async start");
+  //   const okk1 = await goingOut();
+  //   const okk2 = await whereToGo();
+  //   const okk3 = await Bike();
+  //   const okk4 = await teaBreak();
+  //   const okk5 = await inBhedaGhat();
+  //   const okk6 = await Enjoyed();
+  //   const okk7 = await returnToHome();
+  //   const okk8 = await inHome();
+  //   console.log("with async end");
+  // };
+  // withoutCB();
+
+  // goingOut()
+  //   .then((data) => whereToGo())
+  //   .then((data) => Bike())
+  //   .then((data) => teaBreak())
+  //   .then((data) => inBhedaGhat())
+  //   .then((data = Enjoyed()))
+  //   .then((data) => returnToHome())
+  //   .then((data) => inHome());
+
+  const goingOut = () => {
+    return new Promise((res, rej) => {
+      res(console.log("chalo ghumne"));
+    });
+  };
+
+  const whereToGo = () => {
+    return new Promise((res, rej) => {
+      res(console.log("chalo Kahi bhi ek kaam karte hai bhedaghat chalte hai"));
+    });
+  };
+
+  const Bike = () => {
+    return new Promise((res, rej) => {
+      res(console.log("2 gadi 6 ladke"));
+    });
+  };
+  const teaBreak = () => {
+    return new Promise((res, rej) => {
+      res(console.log("Jaldi chalo time ho raha hai fir ghr bhi jana hai"));
+    });
+  };
+  const inBhedaGhat = () => {
+    return new Promise((res, rej) => {
+      res(console.log("pahuch gaye ghumo"));
+    });
+  };
+
+  const Enjoyed = () => {
+    return new Promise((res, rej) => {
+      res(console.log("enjoy ho gaya"));
+    });
+  };
+
+  const returnToHome = () => {
+    return new Promise((res, rej) => {
+      res(console.log("chalo ghar"));
+    });
+  };
+
+  const inHome = () => {
+    return new Promise((res, rej) => {
+      res("pahuch gae ghr");
+    });
+  };
+
+  // goingOut()
+  //   .then(() =>
+  //     whereToGo()
+  //       .then(() =>
+  //         Bike()
+  //           .then(() =>
+  //             teaBreak()
+  //               .then(() =>
+  //                 inBhedaGhat()
+  //                   .then(() =>
+  //                     Enjoyed()
+  //                       .then(() =>
+  //                         returnToHome()
+  //                           .then(() => inHome())
+  //                           .catch((err) => console.log(err))
+  //                       )
+  //                       .catch((err) => console.log(err))
+  //                   )
+  //                   .catch((err) => console.log(err))
+  //               )
+  //               .catch((err) => console.log(err))
+  //           )
+  //           .catch((err) => console.log(err))
+  //       )
+  //       .catch((err) => console.log(err))
+  //   )
+  //   .catch((err) => console.log(err));
+
+    const okk=async()=>{
+      console.log("inside async await")
+      const okk1=await goingOut()
+      const okk2= await whereToGo()
+      const okk3=await Bike()
+      const okk4 = await teaBreak()
+      const okk5 =await inBhedaGhat()
+      const okk6 = await Enjoyed()
+      const okk7 = await returnToHome()
+      const okk8 = await inHome()
+      console.log("inside async await last line",okk8)
+    }
+    okk()
+</script>

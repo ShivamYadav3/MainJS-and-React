@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // let obj = {
+  //   name: "shivam",
+  //   address: {
+  //     city: "mp",
+  //     state: "jabalpur",
+  //   },
+  // };
+  // const checkforkey = obj.hasOwnProperty("name");
+  // const checkforkeynested = obj.address.hasOwnProperty("name");
+  // const checkforkeynested2 = obj.address.hasOwnProperty("city");
+  // console.log(checkforkey, checkforkeynested, checkforkeynested2);
+
+  // let newobj = {
+  //   name: "shivam",
+  //   address: {
+  //     city: "mp",
+  //     state: "jabalpur",
+  //   },
+  // };
+  // Object.freeze(newobj);
+  // newobj.name = "yadav";
+  // console.log(newobj);
+  // console.log(newobj.name);
+
+  const obj2 = {
+    name: "shivam",
+    city: "jabalpur",
+  };
+  const obj3 = {
+    name: "yadav",
+    state: "mp",
+  };
+  // const obj4 = Object.assign({}, obj2);
+  // obj4.name = "shiva";
+  // console.log(obj4, obj2);
+
+  // const obj5 = Object.assign({}, obj2, obj3);
+  // console.log(obj5);
+
+  const obj6 = Object.assign(obj3, { home: 1739, pin: 482002 });
+  console.log("obj6", obj6);
+
+  const obj7 = Object.assign(obj6, { pin: 483110 });
+  console.log("obj7", obj7);
+</script>

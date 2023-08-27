@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+    // const p = () => {
+    //   return new Promise((reply, reject) => {
+    //     reply(1);
+    //   });
+    // };
+
+    // p()
+    //   .then((data) => {
+    //     console.log("LN21: ", data);
+    //     return data + 1;
+    //   })
+    //   .then((data) => {
+    //     console.log("LN25: ", data);
+    //     return data + 10;
+    //   })
+    //   .then((data) => {
+    //     console.log("LN29: ", data);
+    //   })
+    //   .catch((err) => {
+    //     console.log("LN31: ", err);
+    //   });
+
+  // const p = () => {
+  //   return new Promise((reply, reject) => {
+  //     reply(1);
+  //   });
+  // };
+
+  // p()
+  //   .then((data) => {
+  //     console.log("LN21: ", data);
+  //     return data + 1;
+  //   })
+  //   .then((data) => {
+  //     console.log("LN25: ", data);
+  //     return data + 10;
+  //   })
+  //   .then((data) => {
+  //     console.log("LN29: ", data);
+  //   })
+  //   .catch((err) => {
+  //     console.log("LN31: ", err);
+  //   });
+
+  const okk = (num) => {
+    return new Promise((reply, reject) => {
+      reply(num);
+    });
+  };
+
+  okk(5)
+    .then((data) => {
+      console.log("@SY: LN 65 =>", data);  // 5
+      return data + 10;
+    })
+    .then((data) => {
+      console.log("@SY: LN 69 =>", data);  // 15
+      return data + 10;
+    })
+    .then((data) => {
+      console.log("@SY: LN 73 =>", data);  // 25
+      return data + 10;
+    })
+    .then((data) => {
+      console.log("@SY: LN 77 =>", data);  // 35
+      return data + 10;
+    })
+    .then((data) => {
+      console.log("@SY: LN 81 =>", data);  // 45
+      return data + 10;
+    })
+    .then((data) => {
+      console.log("@SY: LN 85 =>", data);  // 55
+    });
+</script>

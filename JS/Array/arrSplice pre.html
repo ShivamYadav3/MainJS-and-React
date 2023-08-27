@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let message = "hi everyone i'm from jabalpur mp";
+  let newmes = message.split(" ");
+  console.log(newmes);
+  let word = newmes.indexOf("from");
+  console.log(word);
+  if (word !== -1) {
+    newmes.splice(word, 1);
+    console.log("okk")
+  }
+  console.log(newmes);
+  let final = newmes.join(" ");
+  console.log(final);
+
+  // let message="hi everyone i'm from jabalpur mp"
+  // let newmes=message.split(" ");
+  // console.log(newmes);
+  // let word =newmes.indexOf("from")
+  // console.log(word)
+  // if(newmes !== -1){
+  //     newmes[word]="jabalpur";
+  // }
+  // console.log(newmes)
+  // let final=newmes.join(" ")
+  // console.log(final)
+</script>

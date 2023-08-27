@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // (function immediateA(a) {
+  //   return (function immediateB(b) {
+  //     console.log(a); // What is logged?
+  //   })(1);
+  // })(0);
+
+  // let count = 0;
+  // (function immediate() {
+  //   if (count === 0) {
+  //     let count = 1;
+  //     console.log(count); // What is logged?
+  //   }
+  //   console.log(count); // What is logged?
+  // })();
+
+  // for (var i = 0; i < 3; i++) {
+  //   setTimeout(function log() {
+  //     console.log(i); // What is logged?
+  //   }, 5000);
+  //   console.log(i)
+  // }
+
+  // for (var i = 0; i < 3; i++) {
+  //   function tryme(i) {
+  //     setTimeout(function log() {
+  //       console.log(i); // What is logged?
+  //     }, 5000);
+  //   }
+  //   tryme(i);
+  //   console.log(i);
+  // }
+
+  // for (var i = 0; i < 3; i++) {
+  //   (tryme = (i) => {
+  //     setTimeout(function log() {
+  //       console.log(i); // What is logged?
+  //     }, 5000);
+  //   })(i);
+  // }
+
+  // for (let i = 0; i < 3; i++) {
+  //   setTimeout(function log() {
+  //     console.log(i); // What is logged?
+  //   }, 5000);
+  //   console.log(i)
+  // }
+
+  // for (var i = 0; i < 3; i++) {
+  //   function abc() {
+  //     var j = i;
+  //     setTimeout(function log() {
+  //       console.log(j); // What is logged?
+  //     }, 5000);
+  //   }
+  //   abc();
+  // }
+
+  for (var i = 0; i < 3; i++) {
+    function abc(i) {
+      var i = i;
+      setTimeout(function log() {
+        console.log(i); // What is logged?
+      }, 5000);
+    }
+    abc(i);
+  }
+</script>

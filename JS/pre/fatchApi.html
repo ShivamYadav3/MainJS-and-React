@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .card {
+      width: 400px;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      justify-content: center;
+    }
+    .image {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+  <body>
+    <div id="container"></div>
+  </body>
+</html>
+<script>
+  fetch("https://fakestoreapi.com/products")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+
+      let container = document.getElementById("container");
+      for (let i = 0; i < data.length; i++) {
+        let card = document.createElement("div");
+        card.className = "card";
+
+        let title = document.createElement("div");
+        title.innerText = "Title = " + data[i].title;
+        card.append(title);
+
+        let image = document.createElement("img");
+        image.src = data[i].image;
+        image.className = "image";
+        card.append(image);
+
+        let price = document.createElement("div");
+        price.innerText = "Price = " +data[i].price;
+        card.append(price);
+
+        let description = document.createElement("div");
+        description.innerText =  "Description = " +data[i].description;
+        card.append(description);
+
+        container.append(card);
+      }
+    });
+</script>

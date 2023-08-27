@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #box {
+      width: 300px;
+    }
+  </style>
+  <body onload="Shivam()">
+    <input type="text" id="box" onkeyup="shiv()" />
+  </body>
+</html>
+<script>
+
+  let store = localStorage.getItem("inp");
+  function shiv() {
+    store = localStorage.setItem("inp", document.getElementById("box").value);
+  }
+  function Shivam() {
+    if (store !== null) {
+      document.getElementById("box").value = store;
+    }
+  }
+</script>

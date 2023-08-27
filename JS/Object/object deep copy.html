@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let obj = {
+    name: "shivam",
+    city: "jabalpur",
+    add: {
+      state: "mp",
+    },
+    // getname: function () {
+    //   return name;
+    // },
+    // getcity: () => {
+    //   return name;
+    // },
+  };
+  let b= structuredClone(obj);
+  b.name="newname",
+  b.add.state="up"
+  console.log(b)
+  console.log(obj)
+
+  // let c = JSON.parse(JSON.stringify(obj));
+  // console.log(c, obj);
+
+  // const a = {
+  //   name: "Mitesh",
+  //   city: "Mumbai",
+  //   details: {
+  //     address: "Kalyan",
+  //   },
+  //   createdAt: new Date(),
+  // };
+  // let d = JSON.parse(JSON.stringify(a));
+  // console.log(a, d);
+
+
+
+
+
+
+// let obj={
+//   name : "shivam",
+//   studentAt:"vss",
+//   createdAt: new Date(),
+//   add:{
+//     city:"jbp",
+//     pincode:483110
+//   }
+// }
+// const obj2=JSON.parse(JSON.stringify(obj))
+// // console.log(obj, obj2)
+// const obj3=structuredClone(obj)
+// console.log({obj,obj2,obj3})
+
+
+
+
+</script>

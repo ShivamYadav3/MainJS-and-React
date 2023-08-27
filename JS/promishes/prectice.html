@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const myPromise = () => {
+    const promise = new Promise((resolve, reject) => {
+      resolve("henced resolved");
+    });
+    return promise;
+  };
+  // console.log('ete',myPromise());
+  myPromise()
+    .then((data) => {
+      console.log("shivam ", data);
+    })
+    .catch((data) => {
+      console.log("err ", data);
+    });
+
+  function delayValue(value, delay) {
+    return new Promise((resolve) =>
+      setTimeout(() => {
+        console.log(value);
+        resolve(value);
+      }, delay)
+    );
+  }
+
+  async function fetchData() {
+    const data = await Promise.all([
+      delayValue("One", 300),
+      delayValue("Two", 200),
+      delayValue("Three", 100),
+    ]);
+    return data;
+  }
+
+  fetchData().then((result) => {
+    console.log(result);
+  });
+</script>

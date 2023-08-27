@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      height: 95vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    #box {
+      width: 800px;
+      height: 300px;
+      position: relative;
+    }
+    img {
+      position: absolute;
+    }
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    @keyframes fade {
+      from {
+        opacity: 0.4;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <body>
+    <div id="box">
+      <img
+        src="https://dubaitrippackages.files.wordpress.com/2017/11/2-imgdinosaurs_base.jpg"
+        alt=""
+        class="fade"
+        width="800px"
+        height="300px"
+      />
+      <img
+        src="https://mywowo.net/media/images/cache/dubai_img_worlds_of_adventure_01_presentazione_jpg_1200_630_cover_85.jpg"
+        alt=""
+        width="800px"
+        class="fade"
+        height="300px"
+      />
+      <img
+        src="https://www.gannett-cdn.com/presto/2018/08/14/PTAL/6e4fff76-595d-4069-9112-cfe15dbfaa43-IMG_Stadium.jpeg?width=660&height=319&fit=crop&format=pjpg&auto=webp"
+        alt=""
+        width="800px"
+        class="fade"
+        height="300px"
+      />
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToQeYeClZMrqqq2aaTT2UdbuWtVktz8jQ9gw&usqp=CAU"
+        alt=""
+        width="800px"
+        class="fade"
+        height="300px"
+      />
+      <img
+        src="https://www.balmerlawrie.com/img/main_images/inside_banner/travel-banner5.jpg"
+        alt=""
+        width="800px"
+        class="fade"
+        height="300px"
+      />
+    </div>
+  </body>
+</html>
+<script>
+  // create a variable with value 0 and add 1 every time and then
+  let slideIndex = 0;
+  let image = document.getElementsByTagName("img");
+  console.log(image)
+  // setInterval(showSlides, 5000);
+  function showSlides() {
+    for (let i = 0; i < image.length; i++) {
+      image[i].style.display = "none";
+    }
+    
+    if (slideIndex > image.length) {
+      slideIndex = 1;
+    }
+    image[slideIndex].style.display = "block";
+    slideIndex++;
+    setTimeout(showSlides, 2000);
+  }
+  showSlides()
+</script>

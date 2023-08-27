@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // Array.prototype.myMap = function (cb) {
+  //   let blank = [];
+  //   for (let i = 0; i < this.length; i++) {
+  //     blank.push(cb(this[i]));
+  //   }
+  //   return blank;
+  // };
+  // let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+  // let arr2 = arr.myMap((data) => data * 2 + 10);
+  // console.log(arr2);
+
+  // Array.prototype.myFilter = function (cb) {
+  //   let blank = [];
+  //   for (let i = 0; i < this.length; i++) {
+  //     if (cb(this[i])) {
+  //       blank.push(this[i]);
+  //     }
+  //   }
+  //   return blank;
+  // };
+  // let arr3 = [1, 2, 3, 4, 5, 6, 7, 8];
+  // let arr4 = arr.myFilter((data) => data % 2 == 0);
+  // console.log(arr4);
+
+  // let arr3 = [1, 2, 3, 4, 5, 6];
+
+  // Array.prototype.myReduce = function (cb, accumulator) {
+  //   // let accumulator = initialVal;
+  //   for (let i = 0; i < this.length; i++) {
+  //     accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i];
+  //   }
+  //   return accumulator;
+  // };
+
+  // let sum2 = arr3.myReduce((acc, cur, i, h) => {
+  //   acc[i] = cur;
+  //   return acc;
+  // }, {});
+
+  // console.log(sum2);
+
+  // Array.prototype.myMap = function (cb) {
+  //   let blank = [];
+  //   for (let i = 0; i < this.length; i++) {
+  //     blank.push(cb(this[i]));
+  //   }
+  //   return blank;
+  // };
+  // Array.prototype.myFilter = function (cb) {
+  //   let blank = [];
+  //   for (let i = 0; i < this.length; i++) {
+  //     if (cb(this[i])) {
+  //       blank.push(this[i]);
+  //     }
+  //   }
+  //   return blank;
+  // };
+  // Array.prototype.myReduce = function (cb, acc) {
+  //   for (let i = 0; i < this.length; i++) {
+  //     acc = acc ? cb(acc, this[i], i, this) : this[i];
+  //   }
+  //   return acc;
+  // };
+
+  // Array.prototype.yourMap = function (cb) {
+  //   const arr = [];
+  //   for (let i = 0; i < this.length; i++) {
+  //     arr.push(cb(this[i]));
+  //   }
+  //   return arr;
+  // };
+  // const try1 = [1, 2, 3, 4, 5, 6].yourMap((data) => data * 2);
+  // console.log("yourMap", try1);
+
+  // Array.prototype.yourFilter = function (cb) {
+  //   const arr = [];
+  //   for (let i = 0; i < this.length; i++) {
+  //     if (cb(this[i])) {
+  //       arr.push(this[i]);
+  //     }
+  //   }
+  //   return arr;
+  // };
+
+  // const try2 = [1, 2, 3, 4, 5, 6].yourFilter((data) => data > 4);
+  // console.log("yourMap", try2);
+
+  // Array.prototype.yourReduce = function (cb, accumulator) {
+  //   for (let i = 0; i < this.length; i++) {
+  //     accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i];
+  //   }
+  //   return accumulator;
+  // };
+  // const try3 = [1, 2, 3, 4, 5, 6].yourReduce((okk, data) => okk + data, 0);
+  // console.log("yourMap", try3);
+
+  Array.prototype.MyMap = function (cb) {
+    let arr = [];
+    for (let i = 0; i < this.length; i++) {
+      arr.push(cb(this[i]));
+    }
+    return arr;
+  };
+  // let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+  // let arr2 = arr.MyMap((data) => data * 2 + 10);
+  // console.log(arr2);
+
+  Array.prototype.MyFilter = function (cb) {
+    let arr = [];
+    for (let i = 0; i < this.length; i++) {
+      if (cb(this[i])) {
+        arr.push(this[i]);
+      }
+    }
+    return arr;
+  };
+  // let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+  // let arr2 = arr.MyFilter((data) => data >5);
+  // console.log(arr2);
+
+  Array.prototype.YourReduce = function (cb, acc) {
+    for (let i = 0; i < this.length; i++) {
+      acc = acc ? cb(acc, this[i], i, this) : this[i];
+    }
+    return acc;
+  };
+  const try3 = [1, 2, 3, 4, 5, 6].YourReduce((okk, data) => okk + data, 0);
+  console.log("YourReduce", try3);
+</script>

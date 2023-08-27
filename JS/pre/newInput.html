@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="search-container">
+      <input
+        id="search-box"
+        placeholder="Search here"
+        onkeyup="handleInput(event)"
+      />
+    </div>
+  </body>
+</html>
+
+<script>
+  const INPUT_KEY = "searchInput";
+  const searchElem = document.getElementById("search-box");
+
+  /**
+   * @description {Method to load data for the first time}
+   */
+  (() => {
+    const result = getSavedInput(INPUT_KEY) || "";
+    console.log(result);
+    searchElem.value = result;
+  })();
+
+  /**
+   * @description {Method to handle user input}
+   */
+  function handleInput(e) {
+    const { value = "" } = e.target;
+    saveInput(INPUT_KEY, value);
+  }
+
+  /**
+   * @description {Method to save data to the local storage}
+   */
+  function saveInput(key, val) {
+    localStorage.setItem(key, val);
+  }
+
+  /**
+   * @description {Method to get data from the local storage}
+   */
+  function getSavedInput(key) {
+    return localStorage.getItem(key);
+  }
+</script>

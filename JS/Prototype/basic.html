@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prototype</title>
+</head>
+<style>
+  p {
+    font-size: 25px;
+  }
+
+  span {
+    font-weight: 800;
+    font-size: 25px;
+  }
+
+  body {
+    margin: 20px
+  }
+</style>
+
+<body>
+  <h1>Prototype</h1>
+  <p>
+    <span>Prototype => </span>Whenever we create a object or string or function js engine
+    attaches the object to it so we can access the property of that object.
+  </p>
+  <p>
+    <span>Prototype Chain => </span>
+  <p> 1) Arr.prototype give the same results arr.__proto__,</p>
+  <p> 2) Arr.__proto__.__proto__ gives the same results as Object.prototype (its
+    results is also a object so we can get its prototype also (see in next
+    line)),</p>
+  <p> 3) Arr.__proto__.__proto__.__proto__ gives the results null when we
+    reach to tha null so that is the end of the chain, it is known as prototype
+    chain or prototypal inheritance.</p>
+  </p>
+  <img
+    src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes/mydate-prototype-chain.svg"
+    alt="">
+  <div style="font-weight: 800; font-size: 25px;">Prototype Chain</div>
+  <img src="https://miro.medium.com/max/1400/1*Evoq9q8LCyxKteA9e-_31w.png" alt="" width="1300px">
+</body>
+
+</html>
+<script>
+  let obj = {
+    name: "shivam",
+    city: "jabalpur"
+  }
+  let obj2 = {
+    state: "mp",
+    country: "india"
+  }
+  // never do this
+  obj2.__proto__ = obj;
+  function func() {
+    console.log("shivam")
+  }
+  func()
+  let arr = [5, 8, 9]
+
+</script>

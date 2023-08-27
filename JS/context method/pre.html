@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//     const person = {
+//   firstName: 'Sanjeev',
+//   lastName: 'Sharma',
+//   age: 22,
+//   getIntro: function() {
+//      console.log(`${this.firstName} ${this.lastName} is ${this.age} years old.`);
+//   }
+// }
+
+// person.getIntro(); 
+
+// function randomFunc() {
+//   console.log(this);
+// }
+
+// randomFunc();
+
+
+// const person = {
+//   firstName: 'Sanjeev',
+//   lastName: 'Sharma',
+//   age: 22,
+//   getIntro: () => {
+//      console.log(`${this.firstName} ${this.lastName} is ${this.age} years old.`);
+//   }
+// }
+
+// person.getIntro(); 
+
+// function randomFunc() {
+//   console.log(this);
+// }
+
+// randomFunc();
+
+
+// function personIntro() {
+//   console.log(`${this.firstName} ${this.lastName}`);
+// };
+
+// const person1 = {
+//   firstName: 'Sanjeev',
+//   lastName: 'Sharma'
+// };
+
+// personIntro(); 
+
+// personIntro.call(person1); 
+
+// personIntro.call({ firstName : 'Harry', lastName : 'Potter' }); 
+
+
+// function personIntro(city, state) {
+//   console.log(`${this.name} is from ${city}, ${state}`);
+// };
+
+// const person = {
+//   name: 'Max',
+//   age: 26
+// }
+
+// personIntro.call(person, 'Los Angeles', 'California');
+
+
+
+
+// function sum(num1, num2) {
+//   console.log(this + num1 + num2);
+// }
+
+// sum.call(2, 3, 4); 
+// sum.apply(2, [3, 4]); 
+
+
+
+// try and check with arrow function
+
+var person = {
+    uname : "Jack",
+    prop : {
+        uname : "Daniel",
+        getName : function() {
+            return this.uname;
+        }
+    }
+}
+
+var namee = person.prop.getName.bind(person);
+console.log(namee());
+
+// var  namee = person.prop.getName();
+// console.log(namee);
+
+
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const getDetails = () =>
+    new Promise((reply, reject) => {
+      reply({
+        name: "Shivam",
+        city: "Jabaplur",
+        country: "India",
+      });
+    });
+
+  const getName = () =>
+    new Promise((reply, reject) => {
+      reply("Shivam");
+    });
+
+  const getCity = () =>
+    new Promise((reply, reject) => {
+      reply("Jabalpur");
+    });
+
+  // Normal Flow
+  // const callDetails = async () => {
+  //   try {
+  //     const details = await getDetails();
+  //     const name = await getName();
+  //     const city = await getCity();
+
+  //     console.log(details, name, city);
+  //   } catch (err) {
+  //     console.log("Err", err);
+  //   }
+  // };
+
+  // callDetails();
+
+  // Promise.all using then
+  Promise.all([getDetails(), getName(), getCity()])
+    .then((data) => {
+      console.log("@AJ ALL Data: ", data);
+    })
+    .catch((err) => {
+      console.log("Err: ", err);
+    });
+
+  // Promise.all using async & await
+
+  const callDetailsV1 = async () => {
+    const result = await Promise.all([
+      getDetails(),
+      getName(),
+      getCity(),
+    ]).catch((err) => console.log("knSK",err));
+
+    console.log("@AJ LN64: using async", result);
+  };
+
+  callDetailsV1();
+</script>

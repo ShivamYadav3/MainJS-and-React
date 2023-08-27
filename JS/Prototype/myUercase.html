@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  if (!String.prototype.capitalise) {
+    String.prototype.capitalise = function () {
+      const splittedStr = this.split(" ");
+
+      for (let i = 0; i < splittedStr.length; i++) {
+        const currentChar = splittedStr[i];
+
+        splittedStr[i] =
+          currentChar.charAt(0).toUpperCase() +
+          currentChar.substring(1).toLowerCase();
+      }
+
+      return splittedStr.join(" ");
+    };
+  }
+
+  let message = "My name is rahul pancholi 85";
+  console.log("Before: ", message);
+  message = message.capitalise();
+
+  console.log("After: ", message);
+</script>
