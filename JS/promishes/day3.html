@@ -75,15 +75,41 @@
   // };
   // sleepV3(5000).then((data) => console.log(data));
 
-  async function main() {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        console.log("hello");
-        resolve("okk");
-      }, 1000);
-    });
-    console.log("world");
-  }
-  main();
+  // async function main() {
+  //   await new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       console.log("hello");
+  //       resolve("okk");
+  //     }, 1000);
+  //   });
+  //   console.log("world");
+  // }
+  // main();
+//   function listener1() {
+//   setTimeout(() => console.log("#1 Hello from timeout 1"), 0);
+
+//   Promise.resolve().then(() => console.log("#1 Hello from promise 1"));
+
+//   const promise = Promise.resolve();
+
+//   setTimeout(() => console.log("#1 Hello from timeout 2"), 0);
+//   console.log("#1 Hello from main thread")
+//   setTimeout(() =>
+//     promise.then(() => console.log("#1 Hello from promise 2°"), 0)
+//   );
+//   return 1
+// }
+// console.log(listener1)
+
+setTimeout(() => console.log("#2 Hello from timeout 1"), 0);
+  Promise.resolve().then(() => console.log("#2 Hello from promise 1"));
+  const promise = Promise.resolve();
+  setTimeout(() => console.log("#2 Hello from timeout 2"), 0);
+  console.log("#2 Hello from main thread");
+  setTimeout(
+    () => promise.then(() => console.log("#2 Hello from promise 2")),
+    0
+  );
+
   
 </script>

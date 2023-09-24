@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn1">hellow</button>
+  </body>
+</html>
+<script>
+  function listener1() {
+    setTimeout(() => console.log("5, #1 Hello from timeout 1"), 0);
+
+    Promise.resolve().then(() => console.log("2, #1 Hello from promise 1"));
+
+    const promise = Promise.resolve();
+
+    setTimeout(() => console.log("6, #1 Hello from timeout 2"), 0);
+    console.log(" 1, #1 Hello from main thread"); //1
+    setTimeout(() =>
+      promise.then(() => console.log("7, #1 Hello from promise 2°"), 0)
+    );
+  }
+
+  function listener2() {
+    setTimeout(() => console.log("8, #2 Hello from timeout 1"), 0);
+    Promise.resolve().then(() => console.log("4, #2 Hello from promise 1"));
+    const promise = Promise.resolve();
+    setTimeout(() => console.log("9, #2 Hello from timeout 2"), 0);
+    console.log("3, #2 Hello from main thread"); //1
+    setTimeout(
+      () => promise.then(() => console.log("10, #2 Hello from promise 2")),
+      0
+    );
+  }
+  // listener1();
+  // listener2();
+    const btn = document.getElementById("btn1");
+    btn.addEventListener("click", listener1, false);
+    btn.addEventListener("click", listener2, false);
+</script>
+
+<!-- const p = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("Done");
+      }, 2000);
+    });
+  };
+  const p2 = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("Done");
+      }, 2000);
+    });
+  };
+  const p3 = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("Done");
+      }, 2000);
+    });
+  };
+  p()
+    .then((data) => {
+      p2()
+        .then((p2Data) => {
+          p3()
+            .then((p3Data) => {
+              p()
+                .then((p4Data) => {
+                  p()
+                    .then((p5Data) => {
+                      p()
+                        .then((p6Data) => {})
+                        .catch((err) => {});
+                    })
+                    .catch((err) => {});
+                })
+                .catch((err) => {});
+            })
+            .catch((err) => {});
+        })
+        .catch((err) => {});
+    })
+    .catch((err) => {});
+  
+  const runPromises = async () => {
+    const pResponse = await p().catch(() => null);
+    if (!pResponse) {
+      // Error condition
+      return;
+    }
+  
+    const p2Response = await p2().catch(() => null);
+    if (!p2Response) {
+      // Error condition
+      return;
+    }
+  
+    const p3Response = await p3().catch(() => null);
+    if (!p3Response) {
+      // Error condition
+      return;
+    }
+  
+    const p4Response = await p().catch(() => null);
+    if (!p4Response) {
+      // Error condition
+      return;
+    }
+  };
+  
+  
+  
+  
+  
+  import { useState } from "react";
+  
+  const CounterEx = () => {
+    const [counter, setCounter] = useState(0);
+  
+    const onIncrement = () => {
+      /*     setCounter(counter + 1); // 0 +1
+      setCounter(counter + 1); // 0 +1
+      setCounter(counter + 1); // 0 +1
+      setCounter(counter + 1); // 0+1 */
+  
+      setCounter((currentVal) => currentVal + 1);
+      setCounter((currentVal) => currentVal + 1);
+      setCounter((currentVal) => currentVal + 1);
+      setCounter((currentVal) => currentVal + 1);
+    };
+  
+    return (
+      <>
+        <p>Counter: {counter}</p>
+        <button onClick={onIncrement}>Increment</button>
+      </>
+    );
+  };
+  
+  export default CounterEx; -->
+  
+  
+

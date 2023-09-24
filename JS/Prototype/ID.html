@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="hdrfhd">svfs</button>
+    <div>
+      <button>doidsj</button>
+      <div>
+        <button id="shivam">sdgkds</button>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  document.getElementByMyId = function (Id) {
+    let elem = document.getElementsByTagName("*");
+    for (let i = 0; i < elem.length; i++) {
+      if (elem[i].id === Id) {
+        return elem[i];
+      }
+    }
+    return null;
+  };
+  let okk = document.getElementByMyId("shivam");
+  const o = document.getElementById("shivam");
+  //   o.style.fontSize="25px"
+  okk.style.fontSize = "50px";
+  okk.style.color = "red";
+
+  function getId(id) {
+    let x = document.body.children;
+
+    function recursion(x) {
+      for (let i = 0; i < x.length - 1; i++) {
+        if (x[i].id === id) {
+          return x[i];
+        } else if (x[i].children) {
+          recursion(x[i]);
+        }
+      }
+      return null;
+    }
+    recursion(x);
+  }
+</script>
