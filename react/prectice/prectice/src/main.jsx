@@ -15,5 +15,13 @@ import EditListRender from "./component/day4/edit";
 import ToDoList2 from "./component/day3/tryThis";
 import ParentComp from "./component/day8/ParentComp";
 import List from "./component/day8/List";
+import Progress from "./component/progress Bar/Progress";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import Calculator from "./features/Calculator/Calculator";
 
-ReactDOM.createRoot(document.getElementById("root")).render(<EditListRender />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+    <Calculator />
+  </Provider>
+);
