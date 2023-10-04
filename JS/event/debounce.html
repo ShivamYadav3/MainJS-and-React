@@ -20,7 +20,6 @@
   function debounce(func, timeout = 500) {
     let timer;
     return (...args) => {
-      console.log("log", args);
       clearTimeout(timer);
       timer = setTimeout(() => {
         func.apply(this, args);

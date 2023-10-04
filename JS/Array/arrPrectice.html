@@ -11,8 +11,26 @@
 </body>
 </html>
 <script>
-   const arr=[4,8,9,9,4,4,1,89,54]
-   arr.splice(5)
-   const arr2=arr.slice(5)
-   console.log(arr)
+//    const arr=[4,8,9,9,4,4,1,89,54]
+//    arr.splice(5)
+//    const arr2=arr.slice(5)
+//    console.log(arr)
+
+    //   group anagram
+    // input - ['yo', 'act', 'flop', 'tac', 'foo', 'cat', 'oy', 'olfp'];
+    // Output: [['yo', 'oy'], ['flop', 'olfp'], ['act', 'tac', 'cat'], ['foo']];
+    const input = ['yo', 'act', 'flop', 'tac', 'foo', 'cat', 'oy', 'olfp'];
+    const anSortedOne = input.map((item) => item.split('').sort().join(''));
+    // anSortedOne= ['oy', 'act', 'flop', 'act', 'foo', 'act', 'oy', 'flop']
+    console.log(anSortedOne);
+    const obj = {};
+    for (let i = 0; i < anSortedOne.length; i++) {
+      if (obj[anSortedOne[i]]) {//oy,//act,flop,foo
+        console.log(obj[anSortedOne[i]],i);
+        obj[anSortedOne[i]].push(input[i]);
+      } else {
+        obj[anSortedOne[i]] = [input[i]];//oy=yo,oy,act=act,tac,cat,flop=flop,olfp,foo=foo
+      }
+    }
+    console.log(Object.values(obj));
 </script>

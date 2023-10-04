@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // const sum=(a)=>{
+  //     return function(b){
+  //         if(!b){
+  //         return a
+  //     }
+  //     return sum(a+b)
+  //     }
+  // }
+  // console.log(sum(1)(2)(5)(3)(4)())
+
+  const apple = () => {
+    return new Promise((reply, reject) => {
+      reply("apple");
+    });
+  };
+
+  const mango = () => {
+    return new Promise((reply, reject) => {
+      reject("mango");
+    });
+  };
+
+  const banana = () => {
+    return new Promise((reply, reject) => {
+      reject("banana");
+    });
+  };
+
+  // console.log(apple())
+
+  //   Promise.all([apple(), mango(), banana()])
+  //     .then((data) => console.log("all", data))
+  //     .catch((err) => console.log("err", err));
+
+//   const otherWay = async () => {
+//     const dataWithAsync = await Promise.all([apple(), banana(), mango()]).catch(
+//       (err) => console.log("err", err)
+//     );
+//     return dataWithAsync;
+//   };
+//   otherWay();
+
+  let str = "string";
+  function revByRecurse(str) {
+    let out = "";
+    let split = str.split("");
+    let i = split.length - 1;
+    function iterate(i) {
+      if (i < 0) {
+        return out;
+      } else {
+        out += split[i];
+        i--;
+
+        return iterate(i);
+      }
+    }
+    return iterate(i);
+  }
+  
+  console.log(revByRecurse(str));
+</script>
