@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <button>click</button>
+  </body>
 </html>
 <script>
   // console.log('start')
@@ -85,31 +87,33 @@
   //   console.log("world");
   // }
   // main();
-//   function listener1() {
-//   setTimeout(() => console.log("#1 Hello from timeout 1"), 0);
 
-//   Promise.resolve().then(() => console.log("#1 Hello from promise 1"));
+  // event loop
 
-//   const promise = Promise.resolve();
+  function listener1() {
+    setTimeout(() => console.log("#1 Hello from timeout 1"), 0); //6
+    Promise.resolve().then(() => console.log("#1 Hello from promise 1")); //3
+    const promise = Promise.resolve();
+    setTimeout(() => console.log("#1 Hello from timeout 2"), 0); //7
+    console.log("#1 Hello from main thread"); //1
+    setTimeout(
+      () => promise.then(() => console.log("#1 Hello from promise 2°"), 0) //8
+    );
+    return console.log("first end"); //2
+  }
 
-//   setTimeout(() => console.log("#1 Hello from timeout 2"), 0);
-//   console.log("#1 Hello from main thread")
-//   setTimeout(() =>
-//     promise.then(() => console.log("#1 Hello from promise 2°"), 0)
-//   );
-//   return 1
-// }
-// console.log(listener1)
+  function listener2() {
+    setTimeout(() => console.log("#2 Hello from timeout 1"), 0); //9
+    Promise.resolve().then(() => console.log("#2 Hello from promise 1 ")); //5
+    const promise = Promise.resolve();
+    setTimeout(() => console.log("#2 Hello from timeout 2 "), 0); //10
+    console.log("#2 Hello from main thread "); //4
+    setTimeout(
+      () => promise.then(() => console.log("#2 Hello from promise 2")), //11
+      0
+    );
+  }
 
-setTimeout(() => console.log("#2 Hello from timeout 1"), 0);
-  Promise.resolve().then(() => console.log("#2 Hello from promise 1"));
-  const promise = Promise.resolve();
-  setTimeout(() => console.log("#2 Hello from timeout 2"), 0);
-  console.log("#2 Hello from main thread");
-  setTimeout(
-    () => promise.then(() => console.log("#2 Hello from promise 2")),
-    0
-  );
-
-  
+  document.addEventListener("click", listener1);
+  document.addEventListener("click", listener2);
 </script>

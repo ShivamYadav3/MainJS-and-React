@@ -13,16 +13,17 @@
   const profile = {
     uName: "Tanuj",
     getName: function () {
-      return this.uName;
+      return this;
     },
   };
 
-  const getUserName = profile.getName;
+  // const getUserName = profile.getName;
 
-  /* const getUserName = function () {
-      return this.name;
-    }; */
+  const getUserName = function () {
+    return this;
+  };
 
   console.log("@AJ 1: ", profile.getName());
   console.log("@AJ 2: ", getUserName());
+  console.log("@AJ 2: ", this);
 </script>

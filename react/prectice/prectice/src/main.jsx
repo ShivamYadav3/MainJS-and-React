@@ -19,9 +19,13 @@ import Progress from "./component/progress Bar/Progress";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import Calculator from "./features/Calculator/Calculator";
+import Movies from "./features/Movies/Movies";
+import Otp from "./component/otp/otp";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <Calculator />
-  </Provider>
+  // <Provider store={store}>
+  //   <Calculator />
+  //   <Movies />
+  // </Provider>
+  <Otp />
 );
