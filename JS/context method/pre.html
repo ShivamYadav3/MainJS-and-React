@@ -1,108 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
 <script>
-//     const person = {
-//   firstName: 'Sanjeev',
-//   lastName: 'Sharma',
-//   age: 22,
-//   getIntro: function() {
-//      console.log(`${this.firstName} ${this.lastName} is ${this.age} years old.`);
-//   }
-// }
+  //     const person = {
+  //   firstName: 'Sanjeev',
+  //   lastName: 'Sharma',
+  //   age: 22,
+  //   getIntro: function() {
+  //      console.log(`${this.firstName} ${this.lastName} is ${this.age} years old.`);
+  //   }
+  // }
 
-// person.getIntro(); 
+  // person.getIntro();
 
-// function randomFunc() {
-//   console.log(this);
-// }
+  // function randomFunc() {
+  //   console.log(this);
+  // }
 
-// randomFunc();
+  // randomFunc();
 
+  // const person = {
+  //   firstName: 'Sanjeev',
+  //   lastName: 'Sharma',
+  //   age: 22,
+  //   getIntro: () => {
+  //      console.log(`${this.firstName} ${this.lastName} is ${this.age} years old.`);
+  //   }
+  // }
 
-// const person = {
-//   firstName: 'Sanjeev',
-//   lastName: 'Sharma',
-//   age: 22,
-//   getIntro: () => {
-//      console.log(`${this.firstName} ${this.lastName} is ${this.age} years old.`);
-//   }
-// }
+  // person.getIntro();
 
-// person.getIntro(); 
+  // function randomFunc() {
+  //   console.log(this);
+  // }
 
-// function randomFunc() {
-//   console.log(this);
-// }
+  // randomFunc();
 
-// randomFunc();
+  // function personIntro() {
+  //   console.log(`${this.firstName} ${this.lastName}`);
+  // };
 
+  // const person1 = {
+  //   firstName: 'Sanjeev',
+  //   lastName: 'Sharma'
+  // };
 
-// function personIntro() {
-//   console.log(`${this.firstName} ${this.lastName}`);
-// };
+  // personIntro();
 
-// const person1 = {
-//   firstName: 'Sanjeev',
-//   lastName: 'Sharma'
-// };
+  // personIntro.call(person1);
 
-// personIntro(); 
+  // personIntro.call({ firstName : 'Harry', lastName : 'Potter' });
 
-// personIntro.call(person1); 
+  // function personIntro(city, state) {
+  //   console.log(`${this.name} is from ${city}, ${state}`);
+  // };
 
-// personIntro.call({ firstName : 'Harry', lastName : 'Potter' }); 
+  // const person = {
+  //   name: 'Max',
+  //   age: 26
+  // }
 
+  // personIntro.call(person, 'Los Angeles', 'California');
 
-// function personIntro(city, state) {
-//   console.log(`${this.name} is from ${city}, ${state}`);
-// };
+  // function sum(num1, num2) {
+  //   console.log(this + num1 + num2);
+  // }
 
-// const person = {
-//   name: 'Max',
-//   age: 26
-// }
+  // sum.call(2, 3, 4);
+  // sum.apply(2, [3, 4]);
 
-// personIntro.call(person, 'Los Angeles', 'California');
+  // try and check with arrow function
 
+  var person = {
+    uname: "Jack",
+    prop: {
+      uname: "Daniel",
+      getName: function () {
+        return this.uname;
+      },
+    },
+  };
 
+  var namee = person.prop.getName.bind(person);
+  console.log(namee());
 
-
-// function sum(num1, num2) {
-//   console.log(this + num1 + num2);
-// }
-
-// sum.call(2, 3, 4); 
-// sum.apply(2, [3, 4]); 
-
-
-
-// try and check with arrow function
-
-var person = {
-    uname : "Jack",
-    prop : {
-        uname : "Daniel",
-        getName : function() {
-            return this.uname;
-        }
-    }
-}
-
-var namee = person.prop.getName.bind(person);
-console.log(namee());
-
-// var  namee = person.prop.getName();
-// console.log(namee);
-
-
+  // var  namee = person.prop.getName();
+  // console.log(namee);
 </script>
