@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  String.prototype.mySplit = function (args = "") {
+    const result = [];
+    let subStr = "";
+
+    for (let i = 0; i < this.length; i++) {
+      if (args === "") {
+        result.push(this[i]);
+      } else if (args !== this[i]) {
+        subStr += this[i];
+      } else {
+        result.push(subStr);
+        subStr = "";
+      }
+    }
+    if (subStr !== "") result.push(subStr);
+    return result;
+  };
+  const arr = "my name is shivam yadav I am from jabalpur".mySplit(" ");
+  console.log(arr);
+</script>

@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      // your compiler options here
+      "outDir": "./dist",
+      "target": "ESNext",
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+}

@@ -21,11 +21,13 @@ import { store } from "./redux/store";
 import Calculator from "./features/Calculator/Calculator";
 import Movies from "./features/Movies/Movies";
 import Otp from "./component/otp/otp";
+import Armstrong from "./component/armstrong";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <Provider store={store}>
   //   <Calculator />
   //   <Movies />
   // </Provider>
-  <Otp />
+  // <Armstrong />
+  <Progress />
 );

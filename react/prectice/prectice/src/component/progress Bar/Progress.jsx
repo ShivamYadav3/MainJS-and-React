@@ -33,7 +33,7 @@ const Progress = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setValue((prev) => prev + 1); // Reset to 0 when reaching 100 = setValue((prev) => (prev >= 100 ? 0 : prev + 1))
+      setValue((prev) => (prev >= 100 ? 0 : prev + 1)); // Reset to 0 when reaching 100 = setValue((prev) => (prev >= 100 ? 0 : prev + 1))
     }, 100);
 
     return () => clearInterval(interval);
