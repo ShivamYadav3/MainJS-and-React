@@ -11,7 +11,7 @@
 <script>
   const getDetails = () =>
     new Promise((reply, reject) => {
-      reject({
+      reply({
         name: "Shivam",
         city: "Jabaplur",
         country: "India",
@@ -20,28 +20,28 @@
 
   const getName = () =>
     new Promise((reply, reject) => {
-      reject("Shivam");
+      reply("Shivam");
     });
 
   const getCity = () =>
     new Promise((reply, reject) => {
-      reject("Jabalpur");
+      reply("Jabalpur");
     });
 
   // Normal Flow
-    // const callDetails = async () => {
-    //   try {
-    //     const details = await getDetails();
-    //     const name = await getName();
-    //     const city = await getCity();
+  // const callDetails = async () => {
+  //   try {
+  //     const details = await getDetails();
+  //     const name = await getName();
+  //     const city = await getCity();
 
-    //     console.log(details, name, city);
-    //   } catch (err) {
-    //     console.log("Err ydihw", err);
-    //   }
-    // };
+  //     console.log(details, name, city);
+  //   } catch (err) {
+  //     console.log("Err ydihw", err);
+  //   }
+  // };
 
-    // callDetails();
+  // callDetails();
 
   // Promise.all using then
   // Promise.allSettled([getDetails(), getName(), getCity()])
@@ -62,7 +62,8 @@
     ]).catch((err) => err);
 
     console.log("@AJ LN64: ", result);
+    return result;
   };
 
-  callDetailsV1();
+  callDetailsV1().then((data) => console.log("s", data));
 </script>

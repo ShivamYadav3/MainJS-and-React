@@ -39,10 +39,11 @@
       delayValue("Two", 200),
       delayValue("Three", 100),
     ]);
+    console.log(data, "okk in");
     return data;
   }
 
   fetchData().then((result) => {
-    console.log(result);
+    console.log(result, "out");
   });
 </script>
